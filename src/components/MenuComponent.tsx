@@ -1,7 +1,5 @@
 'use client'
 import Link from "next/link";
-import path from "path";
-import { constrainedMemory } from "process";
 import React, { useState } from "react";
 
 const MenuComponent: React.FC = () => {
