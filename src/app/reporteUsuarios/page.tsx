@@ -21,13 +21,16 @@ const ReporteUsuarios: React.FC = () => {
         obtenerUsuarios();
 
     }, [])
+    useEffect(()=> {
+        console.log(usuarios)
+    },[usuarios])
 
     const usuariosFiltrados = useMemo(() => {
         return usuarios.filter(usuario => usuario.nombre.toLocaleUpperCase().includes(filtro.toLocaleUpperCase())
             || usuario.correo.toLocaleUpperCase().includes(filtro.toLocaleUpperCase())
             || usuario.telefono.toLocaleUpperCase().includes(filtro.toLocaleUpperCase())
             || obtenerNombreRol(usuario.rol).toLocaleUpperCase().includes(filtro.toLocaleUpperCase()))
-    }, [filtro])
+    }, [filtro, usuarios])
 
 
     function obtenerNombreRol(rol: number) {
