@@ -11,7 +11,7 @@ const ReporteUsuarios: React.FC = () => {
 
     useEffect(() => {
         const obtenerUsuarios = async () => {
-            const repuesta = await axios.get<ReporteUsuariosOut>(" https://francinyturismo-api-8bd4c3bb2026.herokuapp.com/api/route/Obtener_Usuarios");
+            const repuesta = await axios.get<ReporteUsuariosOut>("https://francinyturismoproyect-api-5aa41d4e5161.herokuapp.com/api/route/Obtener_Usuarios");
 
             if (repuesta.data.codigoRespuesta === 0) {
                 setUsuarios(repuesta.data.detalle);
