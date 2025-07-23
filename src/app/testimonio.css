@@ -1,26 +1,56 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.clientSection{
-    padding: 50px 20px;
+
+.clientSection {
+  padding: 50px 20px;
 }
-.clientContainer{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+
+.clientContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.clientMember{
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 100 rgb(0, 0,0);
-    width: 500px;
+
+.clientMember {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 90%;
 }
-.clientPhoto{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
+
+.clientText {
+  flex: 2;
+  padding-right: 20px;
 }
+
+.clientInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.clientPhoto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.clientName {
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 0 0;
+}
+

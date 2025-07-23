@@ -1,103 +1,141 @@
-import Image from "next/image";
+"use client";
+import MenuComponent from "@/components/MenuComponent";
+import React, { useEffect } from "react";
+import { useAuth } from "./context/AuthContext";
+import { useRouter } from "next/navigation";
+import Carousel from "@/components/Carousel";
+import FooterComponent from "@/components/FooterComponet";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing Franciny Fallas{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const { user } = useAuth();
+  const router = useRouter();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  useEffect(() => {
+    if (!user) {
+      router.push("/login");
+    }
+  }, [user]);
+
+  if (!user) return null;
+
+  return (
+    <div>
+      <div className="relative z-50">
+        <MenuComponent />
+      </div>
+      <div className="relative z-10 mt-6 overflow-visible">
+        <Carousel />
+      </div>
+
+      <main className="flex flex-col items-center px-4 py-10">
+        <div className="grid md:grid-cols-2 gap-10 items-center max-w-7xl mb-16">
+          {/* Texto a la izquierda */}
+          <div>
+            <h1 className="text-4xl font-bold text-gray-800 mb-6">
+              Descubre COSTA RICA, Naturaleza, historia y PURA VIDA!! 🏔️
+            </h1>
+            <p className="text-lg text-gray-700 mb-4">
+              Costa Rica es un paraíso natural ubicado en el corazón de Centroamérica, conocido mundialmente por su biodiversidad, paisajes impresionantes y su compromiso con la paz y la sostenibilidad. Este pequeño país,{" "}
+              <span className="text-red-600 font-semibold">sin ejército desde 1948</span>,ha apostado por la educación, la democracia y la conservación ambiental como pilares de su desarrollo.
+            </p>
+            <p className="text-lg text-gray-700 mb-4">
+              <span className="text-red-600 font-semibold">Con una historia rica en cultura y tradiciones</span> Costa Rica fue habitada por pueblos indígenas antes de la llegada de los colonizadores españoles. Hoy, su herencia cultural se mezcla con la calidez de su gente y su estilo de vida basado en el famoso lema{" "}
+              <span className="text-red-600 font-semibold">“¡Pura Vida!”.</span>.
+            </p>
+            <p className="text-lg text-gray-700 mb-4">
+              El país alberga más del 5% de {" "}
+              <span className="text-yellow-600 font-semibold"> la biodiversidad mundial</span>  a pesar de representar solo el 0.03% de la superficie del planeta.Desde bosques tropicales y selvas exuberantes, hasta playas paradisíacas en el Caribe y el Pacífico, volcanes activos y parques nacionales, Costa Rica ofrece una experiencia única para quienes aman la naturaleza y la aventura.{" "}
+              <span className="text-red-600 font-semibold">Explorar Costa Rica </span>, es conectarse con la tierra, con su gente y con un modelo de vida armonioso con el medio ambiente.
+            </p>
+          </div>
+          <div>
+            <img
+              src="/puravida.webp"
+              alt="Costa Rica Playa"
+              className="rounded-xl shadow-lg object-cover w-full h-auto"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+        </div>
+
+        {/* Tarjetas de destinos */}
+        <div className="flex flex-wrap justify-center gap-8 max-w-7xl w-full" id="paquetes">
+          {/* CARD Guanacaste */}
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <a href="/guanacaste">
+              <img className="rounded-t-lg" src="/guanacaste.jpg" alt="Guanacaste" />
+            </a>
+            <div className="p-5">
+              <a href="/guanacaste">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">🌴GUANACASTE</h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                El paraíso de sol eterno, playas espectaculares y naturaleza viva, con una mezcla espectacular de atardeceres de ensueño. ¡Belleza natural solo en Costa Rica!
+              </p>
+              <a
+                href="/guanacaste"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Descúbrelo
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* CARD Alajuela */}
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <a href="/alajuela">
+              <img className="rounded-t-lg" src="/alajuela.jpg" alt="Alajuela" />
+            </a>
+            <div className="p-5">
+              <a href="/alajuela">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">🌋ALAJUELA</h5>
+              </a>
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Tierra de volcanes imponentes, aguas termales que relajan el alma y aventuras únicas en cada rincón.
+                A unos solo pasos del  aeropuerto SJO!
+              </p>
+              <a
+                href="/alajuela"
+                className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Descúbrelo
+                <svg
+                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+       <FooterComponent></FooterComponent>
+  
     </div>
   );
 }
