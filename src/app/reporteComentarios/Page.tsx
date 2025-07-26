@@ -116,4 +116,4 @@ const ReporteComentarios: React.FC = () => {
     );
 };
 
-export default ReporteComentarios
+export default ReporteComentarios;
