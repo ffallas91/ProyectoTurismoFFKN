@@ -34,7 +34,6 @@ const TestimoniosPage: React.FC = () => {
                 <TestimoniosComponent key={index}
 
                     nombre={persona.nombre}
-                    pais={persona.pais}
                     comentario={persona.comentario}
                     imagen={persona.imagen} 
                     ></TestimoniosComponent>

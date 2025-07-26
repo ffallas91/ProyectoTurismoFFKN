@@ -6,6 +6,7 @@ import React, { useEffect, useMemo, useState } from "react"
 import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
 import VentanaMensajesComponent from "@/components/VentanaMensajesComponent";
+import FooterComponent from "@/components/FooterComponet";
 
 const ReporteComentarios: React.FC = () => {
     const router = useRouter();
@@ -64,50 +65,49 @@ const ReporteComentarios: React.FC = () => {
     }, [filtro, Comentarios]);
 
     return (
-        <div>
+        <><div>
             <MenuComponent></MenuComponent>
+            <br /><br /><br />
+
             <div className="max-w-6xl mx-auto px-4 py-6">
-                <h1>{
-                    loading ? (<p>Cargando Usuarios...</p>) : (
-                        <div className="overflow-x-auto rounded-lg shadow-md">
-                            <input
-                                value={filtro}
-                                onChange={(e) => setFiltro(e.target.value)}
-                                placeholder="Difite el Filtro"></input>
-                            <table className="min-w-full divide-y divide-gray-200 bg-white">
-                                <thead className="bg-blue-600 text-white">
-                                    <tr>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold" >Nombre</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold" >Provincia</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold" >Atraccion</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold" >Modalidad</th>
-                                        <th className="px-6 py-3 text-left text-sm font-semibold" >Comentario</th>
+                <h1>{loading ? (<p>Cargando Usuarios...</p>) : (
+                    <div className="overflow-x-auto rounded-lg shadow-md">
+                        <input
+                            value={filtro}
+                            onChange={(e) => setFiltro(e.target.value)}
+                            placeholder="Difite el Filtro"></input>
+                        <table className="min-w-full divide-y divide-gray-200 bg-white">
+                            <thead className="bg-sky-200 text-emerald-900">
+                                <tr>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold">Nombre</th>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold">Provincia</th>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold">Atraccion</th>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold">Modalidad</th>
+                                    <th className="px-6 py-3 text-left text-sm font-semibold">Comentario</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divede-gray-200 text-gray-700">
+                                {comentariosFiltrados.map((usu, index) => (
+                                    <tr key={index}>
+                                        <td className="px-6 py-4 whitespace-nowrap">{usu.nombre}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap">{usu.provincia}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap">{usu.atraccion}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap">{usu.modalidad}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap">{usu.comentario}</td>
                                     </tr>
-                                </thead>
-                                <tbody className="divide-y divede-gray-200 text-gray-700">
-                                    {
-                                        comentariosFiltrados.map((usu, index) => (
-                                            <tr key={index}>
-                                                <td className="px-6 py-4 whitespace-nowrap">{usu.nombre}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">{usu.provincia}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">{usu.atraccion}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">{usu.modalidad}</td>
-                                                <td className="px-6 py-4 whitespace-nowrap">{usu.comentario}</td>
-                                            </tr>
-                                        ))
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    )
-                } </h1>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )} </h1>
             </div>
             <VentanaMensajesComponent
-            mostrar={mostrarModal}
-            mensaje={mensajeModal}
-            onClose={cerrarModal}></VentanaMensajesComponent>
-        </div>
+                mostrar={mostrarModal}
+                mensaje={mensajeModal}
+                onClose={cerrarModal}></VentanaMensajesComponent>
 
+        </div><br /><br /><br /><FooterComponent></FooterComponent></>
+             
     )
 }
 

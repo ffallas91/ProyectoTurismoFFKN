@@ -1,4 +1,5 @@
 'use client'
+import FooterComponent from "@/components/FooterComponet";
 import MenuComponent from "@/components/MenuComponent";
 import { ReporteUsuariosOut, UsuarioOut } from "@/models/ReporteUsuariosOut";
 import axios from "axios";
@@ -50,6 +51,9 @@ const ReporteUsuarios: React.FC = () => {
 
     return (<div>
         <MenuComponent></MenuComponent>
+
+        <h6 className="text-4xl font-extrabold dark:text-white">Reporte<small className="ms-2 font-semibold text-gray-500 dark:text-gray-400">de Usuarios</small></h6>
+        <br /><br /><br />
         <div className="max-w-6xl mx-auto px-4 py-6">
             <input
                 value={filtro}
@@ -57,7 +61,7 @@ const ReporteUsuarios: React.FC = () => {
                 placeholder="Difite el Filtro"></input>
             <div className="overflow-x-auto rounded-lg shadow-md">
                 <table className="min-w-full divide-y divide-gray-200 bg-white">
-                    <thead className="bg-blue-600 text-white">
+                    <thead className="bg-sky-200 text-emerald-900">
                         <tr>
                             <th className="px-6 py-3 text-left text-sm font-semibold" >Nombre</th>
                             <th className="px-6 py-3 text-left text-sm font-semibold" >Correo</th>
@@ -84,6 +88,8 @@ const ReporteUsuarios: React.FC = () => {
             </div>
 
         </div>
+        <br /><br /><br />
+        <FooterComponent></FooterComponent>
 
     </div>
 

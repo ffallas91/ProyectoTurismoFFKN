@@ -72,7 +72,9 @@ const LoginPage: React.FC = () => {
                             onClick={validarCredenciales}
                             className="bg-green-500 w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Confirmar credenciales</button>
           </div>
-          <p className="text-sm text-center">DEMO: aldolfo@gmail.com /123</p>
+          <p className="text-sm text-center">DEMO: aldolfo@gmail.com /123
+                                             
+          </p>
         </div>
       </div>
 
