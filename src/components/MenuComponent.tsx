@@ -70,6 +70,9 @@ const MenuComponent: React.FC = () => {
                 <li className="block px-4 py-2 hover:bg-gray-100">
                   <Link href="/reporteComentarios">Comentarios</Link>
                 </li>
+                 <li className="block px-4 py-2 hover:bg-gray-100">
+                  <Link href="/reporteComentario">Comentario</Link>
+                </li>
               </ul>
             </li>
 
