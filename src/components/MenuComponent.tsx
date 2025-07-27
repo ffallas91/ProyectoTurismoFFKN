@@ -66,12 +66,9 @@ const MenuComponent: React.FC = () => {
               <ul className="absolute hidden group-hover:block bg-white border shadow-md py-2 rounded z-10">
                 <li className="block px-4 py-2 hover:bg-gray-100">
                   <Link href="/reporteUsuarios">Usuarios</Link>
-                </li>
-                <li className="block px-4 py-2 hover:bg-gray-100">
-                  <Link href="/reporteComentarios">Comentarios</Link>
-                </li>
+                  </li>
                  <li className="block px-4 py-2 hover:bg-gray-100">
-                  <Link href="/reporteComentario">Comentario</Link>
+                  <Link href="/reporteComentario">Comentarios</Link>
                 </li>
               </ul>
             </li>
