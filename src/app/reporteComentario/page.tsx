@@ -1,4 +1,4 @@
-'use client'
+ "use client"
 import React, { useEffect, useMemo, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/navigation";
@@ -8,7 +8,7 @@ import MenuComponent from "@/components/MenuComponent";
 import VentanaMensajesComponent from "@/components/VentanaMensajesComponent";
 import FooterComponent from "@/components/FooterComponet";
 
-const reporteComentario: React.FC =() =>{
+const ReporteComentario: React.FC =() =>{
 
 
  const router = useRouter();
@@ -119,4 +119,4 @@ const reporteComentario: React.FC =() =>{
 }
 
 
-export default reporteComentario;
+export default ReporteComentario;
