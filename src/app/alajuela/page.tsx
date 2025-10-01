@@ -34,8 +34,8 @@ const GuanacastePaquetes = () => {
     return (<div>
         <MenuComponent></MenuComponent>
         <br /><br />
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 text-center md:text-5xl lg:text-6xl dark:text-white">ALAJUELA</h1>
-        <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Es el corazón verde de Costa Rica, donde la aventura y la cultura se unen.Visita el majestuoso Volcán Poás, relájate en sus famosas aguas termales y explora plantaciones de café únicas.Con gente cálida y paisajes impresionantes, es la puerta perfecta para iniciar tu viaje por el país.Descubre Alajuela, una joya natural llena de historia y pura vida.</p>
+     <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black text-center md:text-5xl lg:text-6xl">ALAJUELA</h1>
+ <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Es el corazón verde de Costa Rica, donde la aventura y la cultura se unen.Visita el majestuoso Volcán Poás, relájate en sus famosas aguas termales y explora plantaciones de café únicas.Con gente cálida y paisajes impresionantes, es la puerta perfecta para iniciar tu viaje por el país.Descubre Alajuela, una joya natural llena de historia y pura vida.</p>
         <div className="flex justify-center py-12">
             <div className="flex flex-wrap justify-center gap-8 max-w-7xl w-full">
                 {cards.map((card, index) => (

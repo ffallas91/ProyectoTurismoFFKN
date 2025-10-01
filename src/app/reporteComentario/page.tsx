@@ -36,7 +36,7 @@ const ReporteComentario: React.FC =() =>{
         const obtenerComentarios = async () => {
             try {
                 const respuesta = await axios.get<ReporteComentariosOut>(
-                    "https://francinyturismoproyect-api-5aa41d4e5161.herokuapp.com/api/route/Obtener_Comentarios"
+                    "http://localhost:4321/api/route//Obtener_Comentarios"
                 );
                 if (respuesta.data.codigoRespuesta === 0) {
                     setComentarios(respuesta.data.detalle);

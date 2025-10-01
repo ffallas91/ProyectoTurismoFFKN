@@ -12,7 +12,7 @@ const ReporteUsuarios: React.FC = () => {
 
     useEffect(() => {
         const obtenerUsuarios = async () => {
-            const repuesta = await axios.get<ReporteUsuariosOut>("https://francinyturismoproyect-api-5aa41d4e5161.herokuapp.com/api/route/Obtener_Usuarios");
+            const repuesta = await axios.get<ReporteUsuariosOut>("http://localhost:4321/api/route//Obtener_Usuarios");
 
             if (repuesta.data.codigoRespuesta === 0) {
                 setUsuarios(repuesta.data.detalle);
@@ -52,7 +52,7 @@ const ReporteUsuarios: React.FC = () => {
     return (<div>
         <MenuComponent></MenuComponent>
 
-        <h6 className="text-4xl font-extrabold dark:text-white">Reporte<small className="ms-2 font-semibold text-gray-500 dark:text-gray-400">de Usuarios</small></h6>
+        <h6 className="text-4xl font-extrabold dark:text-dark">Reporte<small className="ms-2 font-semibold text-gray-500 dark:text-gray-400">de Usuarios</small></h6>
         <br /><br /><br />
         <div className="max-w-6xl mx-auto px-4 py-6">
             <input

@@ -34,7 +34,7 @@ const GuanacastePaquetes = () => {
     return (<div>
         <MenuComponent></MenuComponent>
         <br /><br />
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 text-center md:text-5xl lg:text-6xl dark:text-white">GUANACASTE</h1>
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 text-center md:text-5xl lg:text-6xl dark:text-BLACK">GUANACASTE</h1>
         <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">El paraíso del sol, la playa y la aventura en Costa Rica. Con paisajes impresionantes, playas de ensueño y parques naturales llenos de vida, es el destino perfecto para relajarse o vivir experiencias inolvidables. Su clima cálido y su gente acogedora te harán sentir como en casa. ¡Descúbrelo y vive la pura vida!</p>
         <div className="flex justify-center py-12">
             <div className="flex flex-wrap justify-center gap-8 max-w-7xl w-full">

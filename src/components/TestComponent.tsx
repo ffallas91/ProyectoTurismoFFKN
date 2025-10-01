@@ -34,8 +34,8 @@ const TestComponent: React.FC<TestComponentProps> = ({ onSuccess }) => {
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-xl w-full max-w-sm text-center">
-      <h1 className="text-2xl font-bold mb-4">Verificación de humanidad</h1>
-      <p className="mb-2">
+      <h1 className="text-2xl font-bold mb-4  dark:text-black">Verificación de humanidad</h1>
+      <p className="mb-2 dark:text-black">
         ¿Cuánto es <strong>{num1} + {num2}</strong>?
       </p>
       <input
@@ -43,7 +43,7 @@ const TestComponent: React.FC<TestComponentProps> = ({ onSuccess }) => {
         value={respuesta}
         onChange={(e) => setRespuesta(e.target.value)}
         placeholder="Tu respuesta"
-        className="border border-gray-300 rounded px-3 py-1 mb-3 w-full"
+        className="border border-gray-300 rounded px-3 py-1 mb-3 w-full dark:text-black"
       />
       <button
         onClick={verificarRespuesta}
